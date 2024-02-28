@@ -37,25 +37,29 @@ export default function Home() {
 
     if (!phone) { 
         errors.phone = 'Phone Number is required.'; 
-    } else if (phone.length < 10) { 
+    } else if (/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}/.test(phone)) { 
         errors.phone = 'Must be 10 digits'; 
     } 
 
     setErrors(errors); 
     setIsFormValid(Object.keys(errors).length === 0); 
-    }; 
+    };
 
-  const handleSubmit = (e) => { 
-    e.preventDefault();
-    if (isFormValid) { 
-        console.log('Form submitted successfully!'); 
-    } else { 
-        console.log('Form has errors. Please correct them.'); 
-    } 
-}; 
+    //displaying result
+    const handleSubmit = (e) => { 
+      e.preventDefault();
+      if (isFormValid) { 
+          console.log('Form submitted successfully!'); 
+      } else { 
+          console.log('Form has errors. Please correct them.'); 
+      } 
+  }; 
   return (
     <main className="container-fluid">
       
+      {/* <div class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300" role="alert">
+        <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+      </div> */}
 
       <article className="flex justify-around items-center w-full">
         <div className="pt-4">
