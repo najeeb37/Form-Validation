@@ -36,7 +36,7 @@ export default function HookVali(){
                        {errors.name && 
                         <div className="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300" role="alert">
                             {errors.name?.type === "required" && <p>Name is required</p> }
-                            {errors.name?.type === "maxWidth" && <p>Maximum length is 30</p> }
+                            {errors.name?.type === "maxLength" && <p>Maximum length is 30</p> }
                         </div>
                         }
                         
